@@ -29,7 +29,7 @@ and the following command loads _./super-website/config.yml_.:
 
 ## Config format
 
-This package loads **YAML** files. Since **JSON** is a subset of YAML, JSON files are also accepted, moreover they can contain comments, which is not part of the JSON specs.
+This package loads **YAML** files. Since **JSON** is a subset of YAML, JSON files are also accepted. And because it's still YAML, JSON files can contain comments too!
 
 The file must describe an associative array where the keys are the available environments. `NODE_ENV` defines which environment is chosen, and an error is thrown if the environment is not available. Moreover, if the key `default` exists, it contains default values that are common to all environments.
 

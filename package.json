@@ -1,7 +1,7 @@
 {
   "name": "config-path",
-  "version": "1.0.0",
-  "description": "Loads a config based on a file (environment variable `CONFIG`) and the Node.js environment (environment variable `NODE_ENV`).",
+  "version": "1.0.1",
+  "description": "Loads a config based environment variables CONFIG and NODE_ENV.",
   "main": "index.js",
   "repository": {
     "type": "git",
