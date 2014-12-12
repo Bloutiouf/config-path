@@ -1,0 +1,27 @@
+{
+  "name": "config-path",
+  "version": "1.0.0",
+  "description": "Loads a config based on a file (environment variable `CONFIG`) and the Node.js environment (environment variable `NODE_ENV`).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bloutiouf/config-path"
+  },
+  "keywords": [
+    "config"
+  ],
+  "author": {
+    "name": "Bloutiouf",
+    "email": "bloutiouf@gmail.com",
+    "url": "http://bloutiouf.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bloutiouf/config-path/issues"
+  },
+  "homepage": "https://github.com/Bloutiouf/config-path",
+  "dependencies": {
+    "js-yaml": "^3.2.3",
+    "merge": "^1.2.0"
+  }
+}
