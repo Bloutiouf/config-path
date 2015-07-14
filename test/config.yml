@@ -1,0 +1,14 @@
+development: &development
+  app:
+    title: Super website
+  listen: 3000
+  redis: &redis
+    host: localhost
+    port: 6379
+
+production:
+  <<: *development
+  listen: 80
+  redis:
+    <<: *redis
+    host: databases.lan

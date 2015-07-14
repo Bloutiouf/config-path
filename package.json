@@ -1,6 +1,6 @@
 {
   "name": "config-path",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Loads a config based on environment variables CONFIG and NODE_ENV.",
   "main": "index.js",
   "repository": {
@@ -21,7 +21,12 @@
   },
   "homepage": "https://github.com/Bloutiouf/config-path",
   "dependencies": {
-    "js-yaml": "^3.2.3",
-    "merge": "^1.2.0"
+    "js-yaml": "^3.2.3"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }
