@@ -3,9 +3,7 @@ var path = require('path');
 var yaml = require('js-yaml');
 
 module.exports = function(defaultFilename) {
-	var filename = process.env.CONFIG || defaultFilename;
-	if (!filename)
-		throw new Error("Cannot determine where the config file is");
+	var filename = process.env.CONFIG || defaultFilename || process.cwd();
 
 	var stats = fs.statSync(filename);
 	if (stats.isDirectory())

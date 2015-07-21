@@ -8,24 +8,30 @@ Loads a config based on a file (overridable by the environment variable `CONFIG`
 
 This module exports a `function(filename)` which loads a config file.
 
-`filename` is the path to the YAML file. If it points to a directory, it loads the config file _config.yml_ inside this directory.
+`filename` is the path to the YAML file. If it points to a directory, it loads the config file _config.yml_ inside this directory. If it's undefined, it defaults to the process's current working directory
 
 In any case, the value of `filename` can be overriden by the environment variable `CONFIG`.
+
+If the config file does not exist, `ENOENT` is thrown.
 
 ### Example
 
 Given the file _./super-website/app.js_:
 
-	var config = require('config-path')(__dirname);
+	var config = require('config-path')();
 	var express = require('express');
 	
 	var app = express();
 	...
 	app.listen(config.listen);
 
-the following command loads _./super-website/config.yml_:
+the following command loads _./config.yml_:
 
 	node ./super-website/app.js
+
+the following command loads _./super-website/config.yml_:
+
+	cd super-website && node ./app.js
 
 the following command loads _/var/www/configs/super-website.yml_:
 
@@ -35,7 +41,7 @@ the following command loads _/var/www/configs/super-website.yml_:
 
 This package loads **YAML** files. Since **JSON** is a subset of YAML, JSON files are also accepted. And because it's still YAML, JSON files can contain comments too!
 
-The file must describe an associative array where the keys are the available environments. `NODE_ENV` defines which environment is chosen. If `NODE_ENV` is undefined, defaults to `development`. An error is thrown if the environment is not available.
+The file must describe an associative array where the keys are the available environments. `NODE_ENV` defines which environment is chosen. If `NODE_ENV` is undefined, defaults to `development`. An `Error` is thrown if the environment is not available.
 
 As part of the YAML specs, you can use anchors and references to specify variables across environments.
 
